@@ -48,11 +48,13 @@ function takeTurn(e) {
       return square === e.target;
     });
 
-    board[index] = turn;
-    turn = turn === "X" ? "O" : "X";
-    win = getWinner();
+    if (board[index] === "") {
+      board[index] = turn;
+      turn = turn === "X" ? "O" : "X";
+      win = getWinner();
 
-    render();
+      render();
+    }
   }
 }
 
