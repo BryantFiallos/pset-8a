@@ -25,4 +25,10 @@ h2 {
 .column {
   height: 100%;
   width: 100%;
-  flex-direction: column;       
+  flex-direction: column;
+
+.wrap {
+    flex-wrap: wrap;              
+    height: 456px;
+    width: 456px;
+  }
