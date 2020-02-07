@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font-family: "Roboto", monospace;
+  background-color: #ADCBE3
 }
 
 
@@ -51,10 +52,24 @@ h2 {
 
 
 .square:hover {
-  background-color: lightgray;
+  background-color: #E7EFF6;
   cursor: pointer;
 }
 
+.first {
+  border: 1px solid;
+  font-size: 46px;
+  height: 90px;
+  line-height: 100px;
+  user-select: none;
+  width: 90px;
+  margin: 5%;
+}
+
+.first:hover {
+    background-color: #E7EFF6;
+    cursor: pointer;
+}
 
 #reset-button {
   background-color: white;
@@ -76,6 +91,7 @@ h2 {
 
 table {
   border-collapse: collapse;
+  margin: 2%;
 }
 
 table, td, th {
