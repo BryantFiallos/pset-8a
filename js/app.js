@@ -13,6 +13,8 @@ const winningConditions = [
 let board;
 let turn;
 let win;
+let xWins = 0;
+let oWins = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
@@ -68,6 +70,14 @@ function getWinner() {
       board[condition[1]] === board[condition[2]]
     ) {
       winner = board[condition[0]];
+      if (winner === "X") {
+        xWins++;
+        document.getElementById("xScore").innerHTML = xWins;
+      }
+      if (winner === "O") {
+        oWins++;
+        document.getElementById("oScore").innerHTML = oWins;
+      }
     }
   });
 
