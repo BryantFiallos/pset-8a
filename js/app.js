@@ -15,6 +15,7 @@ let turn;
 let win;
 let xWins = 0;
 let oWins = 0;
+let ties = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
@@ -22,6 +23,8 @@ const message = document.querySelector("h2");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
+document.getElementById("xFirst").onclick = xFirst;
+document.getElementById("oFirst").onclick = oFirst;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
   board = [
@@ -54,6 +57,10 @@ function takeTurn(e) {
       board[index] = turn;
       turn = turn === "X" ? "O" : "X";
       win = getWinner();
+      if (win === "T") {
+        ties++;
+        document.getElementById("tScore").innerHTML = ties;
+      }
 
       render();
     }
@@ -73,13 +80,33 @@ function getWinner() {
       if (winner === "X") {
         xWins++;
         document.getElementById("xScore").innerHTML = xWins;
+        playYuh();
       }
-      if (winner === "O") {
+      else if (winner === "O") {
         oWins++;
         document.getElementById("oScore").innerHTML = oWins;
+        playYuh();
       }
+
     }
+
   });
 
   return winner ? winner : board.includes("") ? null : "T";
+}
+
+function xFirst(){
+  init();
+  document.getElementById("turn").innerHTML = "Turn: X";
+  turn = "X";
+
+}
+function oFirst(){
+  init();
+  document.getElementById("turn").innerHTML = "Turn: O";
+  turn = "O";
+}
+
+function playYuh() {
+  document.getElementById("myAudio").play();
 }
