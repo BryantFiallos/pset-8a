@@ -16,6 +16,7 @@ let win;
 let xWins = 0;
 let oWins = 0;
 let ties = 0;
+let first = "X"
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
@@ -35,6 +36,13 @@ function init() {
   ];
   turn = "X";
   win = null;
+
+if (first === "X") {
+  turn = "X"
+}
+else if (first === "O") {
+  turn = "O"
+}
 
   render();
 }
@@ -100,12 +108,14 @@ function xFirst(){
   init();
   document.getElementById("turn").innerHTML = "Turn: X";
   turn = "X";
+  first = "X"
 
 }
 function oFirst(){
   init();
   document.getElementById("turn").innerHTML = "Turn: O";
   turn = "O";
+  first = "O"
 }
 
 function playYuh() {
