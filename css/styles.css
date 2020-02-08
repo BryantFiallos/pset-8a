@@ -54,8 +54,9 @@ h2 {
 
 
 .square:hover {
-  background-color: #E7EFF6;
+  background-color: white;
   cursor: pointer;
+  color: black;
 }
 
 .first {
@@ -71,6 +72,7 @@ h2 {
 .first:hover {
     background-color: white;
     cursor: pointer;
+    color: black;
 }
 
 #reset-button {
@@ -91,7 +93,11 @@ h2 {
   cursor: pointer;
 }
 
-table {
+#turn {
+  font-size: 70px;
+}
+
+.scoreboard {
   border-collapse: collapse;
   margin: 2%;
   border-color: white;
@@ -101,6 +107,9 @@ td {
   border-color: white;
 }
 
+p {
+  background-color: black;
+}
 table, td, th {
-  border: 1px solid black;
+  border: 1px solid white;
 }
