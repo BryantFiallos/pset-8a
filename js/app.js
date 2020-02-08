@@ -25,6 +25,7 @@ document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
 document.getElementById("xFirst").onclick = xFirst;
 document.getElementById("oFirst").onclick = oFirst;
+document.getElementById("reset-scoreboard").onclick = resetScoreboard;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
   board = [
@@ -109,4 +110,14 @@ function oFirst(){
 
 function playYuh() {
   document.getElementById("myAudio").play();
+}
+
+function resetScoreboard() {
+    xWins = 0;
+    oWins = 0;
+    ties = 0;
+
+    document.getElementById("xScore").innerHTML = xWins;
+    document.getElementById("tScore").innerHTML = ties;
+    document.getElementById("oScore").innerHTML = oWins;
 }
