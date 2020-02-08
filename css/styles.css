@@ -1,7 +1,8 @@
 body {
   text-align: center;
+  color: white;
   font-family: "Roboto", monospace;
-  background-color: #ADCBE3
+  background-image: url("../images/vhs.gif");
 }
 
 
@@ -48,6 +49,7 @@ h2 {
   line-height: 150px;
   user-select: none;
   width: 150px;
+  border-color: white;
 }
 
 
@@ -67,7 +69,7 @@ h2 {
 }
 
 .first:hover {
-    background-color: #E7EFF6;
+    background-color: white;
     cursor: pointer;
 }
 
@@ -92,6 +94,11 @@ h2 {
 table {
   border-collapse: collapse;
   margin: 2%;
+  border-color: white;
+}
+
+td {
+  border-color: white;
 }
 
 table, td, th {
